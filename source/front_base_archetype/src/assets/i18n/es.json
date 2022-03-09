@@ -1,0 +1,49 @@
+{
+    "Ng-PrimeLogin": "nombreAplicacion",
+    "Login": "Iniciar Sesión",
+    "Register": "Registro",
+    "WelcomeMessage": "Bienvenido a Comedores",
+    "Home": "Inicio",
+    "Volver": "Volver",
+    "Employees": "Empleados",
+    "Departments": "Departamentos",
+    "AboutUs": "Sobre nosotros",
+    "ContactUs": "Contacto",
+    "User": "usuario",
+    "Password": "contraseña",
+    "Servicio comidas": "Servicio comidas",
+    "Facturación": "Facturación",
+    "menu": {
+        "opcionesMenu": "Opciones de menú",
+        "listado": "Listado",
+        "unidadSanitaria": "Unidad sanitaria",
+        "usuarios": "USUARIOS"
+    },
+
+    "alertas": {
+        "bienvenida": "Bienvenid@ de nuevo",
+        "loginIncorrecto": "Error de inicio de sesión, compruebe sus credenciales e inténtelo de nuevo",
+        "alertaEliminar": "¿Realmente quiere eliminar el registro?",
+        "regEliminado": "Registro eliminado con éxito",
+        "regAniadido": "Registro añadido con éxito",
+        "regEditado": "Registro editado con éxito",
+        "codRequerido": "El código es requerido",
+        "siConfirmacion": "Si",
+        "noConfirmacion": "No"
+    },
+
+    "error": {
+        "backend": {
+            "generico": "Se ha producido un error al procesar la petición. Disculpe las molestias.",
+            "conexion": {
+                "404": "La página que ha solicitado no se encuentra disponible. Disculpe las molestias.",
+                "424": "Se ha producido un error en el acceso a un servicio externo a este aplicación. Disculpe las molestias.",
+                "500": "Algo salió mal en el servidor del sitio web. Disculpe las molestias.",
+                "403": "Acceso denegado al servidor del sitio web. Disculpe las molestias.",
+                "401": "No tiene autorización para acceder al sitio web. Disculpe las molestias.",
+                "generico": "El servidor del sitio web no se encuentra disponible. Disculpe las molestias."
+            },
+            "session": "No tiene acceso a la aplicación o su sesión ha caducado. Puede volver a iniciar sesión."
+        }
+    }
+}

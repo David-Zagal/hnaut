@@ -1,0 +1,47 @@
+<div class="login-panel">
+    <div class="language-menu">
+        <p-selectButton (click)="onLanguageChange()" [options]="languages" [(ngModel)]="selectedLanguage" optionLabel="name">
+            <ng-template let-item>
+                <img src="assets/images/{{item.flag}}" style="padding-top: 4px" /> {{item.locale}}
+                <!--<span>{{item.name}}</span>-->
+            </ng-template>
+        </p-selectButton>
+    </div>
+    <div class="padre">
+        <div class="grid hijo">
+            <div class="col"></div>
+            <div class="col">
+                <p-panel header="{{ 'Ng-PrimeLogin' | translate}}" class="center">
+                    <form [formGroup]="loginForm">
+                        <div class="grid justify-center align-center">
+                            <div class="col-12">
+                                <img src="assets/images/LogoMINISDEF.svg" class="login-logo" style="padding-top: 10px;">
+                            </div>
+                            <div class="col-12">
+                                <div class="p-inputgroup">
+                                    <span class="p-inputgroup-addon"><i class="fa fa-user"></i></span>
+                                    <input id="input-username" type="text" size="20" pInputText formControlName="userName" placeholder="{{ 'User' | translate}}">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="p-inputgroup">
+                                    <span class="p-inputgroup-addon"><i class="fa fa-key"></i></span>
+                                    <input id="input-password" type="password" size="20" pInputText formControlName="password" placeholder="{{ 'Password' | translate}}" (keydown.enter)="onClickLogin()">
+                                </div>
+                            </div>
+                            <div class="col-12 center">
+
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="col-12">
+                                <button pButton type="button" label="{{ 'Login' | translate}}" class="p-button-raised p-button-primary" (click)="onClickLogin()" [disabled]="!loginForm.valid"></button>
+                            </div>
+                        </div>
+                    </form>
+                </p-panel>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</div>

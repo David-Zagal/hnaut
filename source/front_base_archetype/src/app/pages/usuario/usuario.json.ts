@@ -1,0 +1,31 @@
+/*import { UsuarioEntity } from './usuario.entity';
+
+export const USERS: UsuarioEntity[] = [
+    {fullName: '01', userName: 'aaa', role: "Administrativos", status: true},
+    {fullName: '02', userName: 'bbb', role: "Médico", status: false},
+    {fullName: '03', userName: 'ccc', role: "Farmacéutico", status: true},
+    {fullName: '04', userName: 'ddd', role: "Administrativos", status: true},
+    {fullName: '05', userName: 'eee', role: "Médico", status: false},
+    {fullName: '06', userName: 'fff', role: "Farmacéutico", status: true},
+    {fullName: '07', userName: 'ggg', role: "Administrativos", status: true},
+    {fullName: '08', userName: 'hhh', role: "Médico", status: false},
+    {fullName: '09', userName: 'iii', role: "Farmacéutico", status: true},
+    {fullName: '10', userName: 'jjj', role: "Administrativos", status: true},
+    {fullName: '11', userName: 'kkk', role: "Médico", status: false},
+    {fullName: '12', userName: 'lll', role: "Farmacéutico", status: true},
+    {fullName: '13', userName: 'mmm', role: "Administrativos", status: true},
+    {fullName: '14', userName: 'nnn', role: "Médico", status: false},
+    {fullName: '16', userName: 'ñññ', role: "Farmacéutico", status: true},
+    {fullName: '17', userName: 'ooo', role: "Administrativos", status: true},
+    {fullName: '18', userName: 'ppp', role: "Médico", status: false},
+    {fullName: '19', userName: 'qqq', role: "Farmacéutico", status: true},
+    {fullName: '20', userName: 'rrr', role: "Administrativos", status: true},
+    {fullName: '21', userName: 'sss', role: "Médico", status: false},
+    {fullName: '22', userName: 'ttt', role: "Farmacéutico", status: true},
+    {fullName: '23', userName: 'uuu', role: "Administrativos", status: true},
+    {fullName: '24', userName: 'vvv', role: "Médico", status: false},
+    {fullName: '25', userName: 'www', role: "Farmacéutico", status: true},
+    {fullName: '26', userName: 'xxx', role: "Administrativos", status: true},
+    {fullName: '27', userName: 'yyy', role: "Médico", status: false},
+    {fullName: '28', userName: 'zzz', role: "Farmacéutico", status: true}
+  ];*/

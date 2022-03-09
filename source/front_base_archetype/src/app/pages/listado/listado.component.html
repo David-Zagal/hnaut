@@ -1,0 +1,119 @@
+<p-card>
+    <h2>Prueba de formulario</h2>
+
+    <p-panel header="formularios">
+
+        <div class="card">
+            <h5>Horizontal and Fixed Width</h5>
+            <div class="field grid">
+                <label for="firstname3" class="col-fixed" style="width:100px">Firstname</label>
+                <div class="col">
+                    <input id="firstname3" type="text" pInputText>
+                </div>
+            </div>
+            <div class="field grid">
+                <label for="lastname3" class="col-fixed" style="width:100px">Lastname</label>
+                <div class="col">
+                    <input id="lastname3" type="text" pInputText>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h5>Horizontal and Fluid</h5>
+            <div class="fluid">
+                <div class="field grid">
+                    <label for="firstname4" class="col-12 p-mb-2 p-md-2 p-mb-md-0">Firstname</label>
+                    <div class="col-12 p-md-10">
+                        <input id="firstname4" type="text" pInputText>
+                    </div>
+                </div>
+                <div class="field grid">
+                    <label for="lastname4" class="col-12 p-mb-2 p-md-2 p-mb-md-0">Lastname</label>
+                    <div class="col-12 p-md-10">
+                        <input id="lastname4" type="text" pInputText>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h5>Inline</h5>
+            <div class="formgroup-inline">
+                <div class="field">
+                    <label for="firstname5" class="p-sr-only">Firstname</label>
+                    <input id="firstname5" type="text" pInputText placeholder="Firstname">
+                </div>
+                <div class="field">
+                    <label for="lastname5" class="p-sr-only">Lastname</label>
+                    <input id="lastname5" type="text" pInputText placeholder="Lastname">
+                </div>
+                <button pButton pRipple type="button" label="Submit" class="p-button-primary"></button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h5>Vertical Checkbox</h5>
+            <div class="field-checkbox">
+                <p-checkbox name="city1" value="Chicago" [(ngModel)]="cities1" inputId="city1"></p-checkbox>
+                <label for="city1">Chicago</label>
+            </div>
+            <div class="field-checkbox">
+                <p-checkbox name="city2" value="Los Angeles" [(ngModel)]="cities1" inputId="city2"></p-checkbox>
+                <label for="city2">Los Angeles</label>
+            </div>
+
+            <h5>Horizontal Checkbox</h5>
+            <div class="formgroup-inline">
+                <div class="field-checkbox">
+                    <p-checkbox name="city3" value="Chicago" [(ngModel)]="cities2" inputId="city3"></p-checkbox>
+                    <label for="city3">Chicago</label>
+                </div>
+                <div class="field-checkbox">
+                    <p-checkbox name="city4" value="Los Angeles" [(ngModel)]="cities2" inputId="city4"></p-checkbox>
+                    <label for="city4">Los Angeles</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h5>Vertical RadioButton</h5>
+            <div class="field-radiobutton">
+                <p-radioButton name="city5" value="Chicago" [(ngModel)]="city1" inputId="city5"></p-radioButton>
+                <label for="city5">Chicago</label>
+            </div>
+            <div class="field-radiobutton">
+                <p-radioButton name="city6" value="Los Angeles" [(ngModel)]="city1" inputId="city6"></p-radioButton>
+                <label for="city6">Los Angeles</label>
+            </div>
+
+            <h5>Horizontal RadioButton</h5>
+            <div class="p-formgroup-inline">
+                <div class="field-checkbox">
+                    <p-radioButton name="city7" value="Chicago" [(ngModel)]="city2" inputId="city7"></p-radioButton>
+                    <label for="city7">Chicago</label>
+                </div>
+                <div class="field-checkbox">
+                    <p-radioButton name="city8" value="Los Angeles" [(ngModel)]="city2" inputId="city8"></p-radioButton>
+                    <label for="city8">Los Angeles</label>
+                </div>
+            </div>
+        </div>
+
+    </p-panel>
+</p-card>
+
+<p-card>
+    <h2>Prueba de acordeón</h2>
+    <p-accordion>
+        <p-accordionTab header="Header 1">
+            Content 1
+        </p-accordionTab>
+        <p-accordionTab header="Header 2">
+            Content 2
+        </p-accordionTab>
+        <p-accordionTab header="Header 3">
+            Content 3
+        </p-accordionTab>
+    </p-accordion>
+</p-card>

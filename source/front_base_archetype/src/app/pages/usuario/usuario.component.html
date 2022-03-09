@@ -1,0 +1,146 @@
+<p-confirmDialog header="Confirmación" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+
+<p-card>
+
+    <div>
+        <p-button (click)="showDialog(this.emptyUser)" type="button" label="Agregar usuario" 
+            icon="pi pi-plus" styleClass="ui-button-raised ui-button-primary" 
+            class="ui-button-icon-left ui-clickable"></p-button>
+    </div>
+    <br>
+
+    <p-dialog header="{{popUpTitle}}" [(visible)]="display" [modal]="true" [style]="{width: '50vw'}" 
+        [maximizable]="true" [draggable]="false" [resizable]="false">
+        <form #userForm="ngForm" (ngSubmit)="save(user);">    
+            <fieldset>
+                <legend>Datos personales</legend>
+                <br>
+
+                <div class="p-fluid grid">
+                    <div class="form-group field col-12 md:col-4">
+                        <h4><b>Usuario</b></h4>
+                        <input pInputText type="text" required #login="ngModel" name="login" 
+                            class="form-control" [(ngModel)]="this.user.login"/>
+                    </div>
+
+                    <div class="form-group field col-12 md:col-4">
+                        <h4><b>Nombre</b></h4>
+                        <input pInputText type="text" required #lastname="ngModel" name="lastname"
+                            class="form-control" [(ngModel)]="this.user.lastname"/>
+                    </div>
+
+                    <div class="form-group field col-12 md:col-4">
+                        <h4><b>Apellidos</b></h4>
+                        <input pInputText type="text" required #surname="ngModel" name="surname"
+                            class="form-control" [(ngModel)]="this.user.surname"/>
+                    </div>      
+                </div>
+
+                <div class="p-fluid grid">
+                    <div class="form-group field col-12 md:col-4">
+                        <h4><b>Rol</b></h4>
+                        <p-dropdown [options]="roles" #codeRol="ngModel" [(ngModel)]="this.user.codeRol"
+                            class="form-control" optionLabel="rol" optionValue="rol" name="codeRol"
+                            [showClear]="true" placeholder="...">
+                        </p-dropdown>
+                    </div>
+
+                    <div class="form-group field col-12 md:col-4">
+                        <h4><b>Estado</b></h4>
+                        <p-inputSwitch type="checkbox" #active="ngModel" name="active"
+                            class="form-control" [(ngModel)]="this.user.active">
+                        </p-inputSwitch>
+                        <h5 *ngIf="user.active">&nbsp;&nbsp;Activo</h5>
+                        <h5 *ngIf="!user.active">&nbsp;&nbsp;Pasivo</h5>
+                    </div>
+                </div>
+
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Perfiles</legend>
+                <br>
+                <p-pickList [source]="perfilesDisponibles" [target]="perfilesAsignados" sourceHeader="Perfiles disponibles" 
+                    targetHeader="Perfiles asignados" [dragdrop]="true" [responsive]="true" filterBy="name"
+                    [sourceStyle]="{'height':'30rem'}" [targetStyle]="{'height':'30rem'}"
+                    sourceFilterPlaceholder="..." targetFilterPlaceholder="...">
+                    <ng-template let-profile pTemplate="item">
+                        <div>
+                            <p style="font-size:16px;margin:0px 0px 0 0">{{profile.name}}</p>
+                        </div>
+                        <div>
+                            <h5 style="font-size:12px;margin:0px 0px 0 0">{{profile.description}}</h5>
+                        </div>    
+                    </ng-template>
+                </p-pickList>
+                <br>
+            </fieldset>
+        </form>
+        <ng-template pTemplate="footer">
+            <p-button (click)="save(user)" type="submit" label="Guardar" 
+                icon="pi pi-check" styleClass="ui-button-raised ui-button-primary" 
+                class="ui-button-icon-left ui-clickable"></p-button>
+            <p-button (click)="display=false" type="button" label="Cancelar" 
+                icon="pi pi-times" styleClass="ui-button-raised ui-button-primary"
+                class="ui-button-icon-left ui-clickable"></p-button>
+        </ng-template>
+    </p-dialog>
+
+    <p-table #dt [value]="users" sortMode="single" dataKey="login" [rows]="20" responsiveLayout="scroll"
+        [showCurrentPageReport]="true"  [rowsPerPageOptions]="[10,20,40]" scrollHeight="400px"
+        [paginator]="true" [scrollable]="true" currentPageReportTemplate="Mostrando de {first} a {last} de {totalRecords} entradas">
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="fullName">Nombre completo<p-sortIcon field="fullName"></p-sortIcon></th>
+                <th pSortableColumn="login">Usuario<p-sortIcon field="login"></p-sortIcon></th>
+                <th pSortableColumn="codeRol">Rol<p-sortIcon field="codeRol"></p-sortIcon></th>
+                <th pSortableColumn="active">Estado<p-sortIcon field="active"></p-sortIcon></th>
+                <th>Acciones</th>
+            </tr>
+            <tr>
+                <th>
+                    <p-columnFilter type="text" field="fullName" placeholder="..." [showMenu]="false"></p-columnFilter>
+                </th>
+                <th>
+                    <p-columnFilter type="text" field="login" placeholder="..." [showMenu]="false"></p-columnFilter>
+                </th>
+                <th>
+                    <p-columnFilter field="codeRol" matchmode="equals" [showMenu]="false">
+                        <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                            <p-dropdown [ngModel]="value" [options]="roles" (onChange)="filter($event.value.rol)" 
+                                placeholder="..." optionLabel="rol">
+                                <ng-template let-option pTemplate="item">
+                                    <span>{{option.rol}}</span>
+                                </ng-template>
+                            </p-dropdown>
+                        </ng-template>
+                    </p-columnFilter>            
+                </th>
+                <th>
+                    <p-columnFilter type="text" field="active" placeholder="..." [showMenu]="false"></p-columnFilter>
+                </th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-user>
+            <tr>
+                <td>{{user.fullName}}</td>
+                <td>{{user.login}}</td>
+                <td>{{user.codeRol}}</td>
+                <td *ngIf="user.active">Activo&nbsp;&nbsp;<p-inputSwitch [(ngModel)]="user.active" (onChange)="changeStatus()"><span></span></p-inputSwitch></td>
+                <td *ngIf="!user.active">Pasivo&nbsp;&nbsp;<p-inputSwitch [(ngModel)]="user.active" (onChange)="changeStatus()"><span></span></p-inputSwitch></td>        
+                <td>
+                    <p-button (click)="showDialog(user)" type="button" icon="pi pi-user-edit" 
+                        styleClass="ui-button-raised ui-button-primary" title="{{'Editar usuario' | translate}}"></p-button>
+                    <p-button (click)="delete(user)" type="button" icon="pi pi-trash" 
+                        styleClass="ui-button-raised ui-button-primary" title="{{'Borrar usuario' | translate}}"></p-button>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="5">No se encontraron usuarios</td>
+            </tr>
+        </ng-template>
+    </p-table>   
+</p-card>    

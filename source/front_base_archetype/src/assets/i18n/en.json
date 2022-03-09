@@ -1,0 +1,46 @@
+{
+    "Ng-PrimeLogin": "nombreAplicacion",
+    "Login": "Login",
+    "Register": "Register",
+    "WelcomeMessage": "Welcome",
+    "Home": "Home",
+    "Volver": "Back",
+    "Employees": "Employees",
+    "Departments": "Departments",
+    "AboutUs": "About Us",
+    "ContactUs": "Contact Us",
+    "User":"user",
+    "Password": "password",
+    "Servicio comidas": "Food service",
+    "Facturación": "Billing",
+    "menu": {        
+       "opcionesMenu": "Menu options",
+       "listado": "List"
+            },
+    "alertas":{
+        "bienvenida": "Welcome back",
+        "loginIncorrecto": "Login error, check your credentials and try again",
+        "alertaEliminar": "Are you sure to delete the record?",
+        "regEliminado": "Record deleted successfully",
+        "regAniadido": "Record added successfully",
+        "regEditado": "Record edited successfully",
+        "codRequerido": "Code required",
+        "siConfirmacion": "Yes",
+        "noConfirmacion": "No" 
+    },
+
+    "error":{      
+        "backend":{
+            "generico":"Something was wrong while processing the request. We apologize for the inconvenience.",
+            "conexion":{
+                "404":"The page you have requested is not available.",
+                "424":"Something was wrong while calling an external service. We apologize for the inconvenience.",
+                "500":"Something was wrong while requesting at the application server. We apologize for the inconvenience.",
+                "403":"You have no access to application.",
+                "401":"You are unauthorized to access to application.",
+                "generico": "Application's web server is not available."
+            },
+            "session":"You are unauthorized to access to application or your session is expired. You may login again."
+        }
+    }
+}
